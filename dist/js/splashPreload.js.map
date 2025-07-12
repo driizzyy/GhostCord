@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../src/preload/splash.ts"],
+  "sourcesContent": ["/*\n * GhostCord, a desktop app aiming to give you a snappier Discord Experience\n * Copyright (c) 2025 Vendicated and GhostCord contributors\n * SPDX-License-Identifier: GPL-3.0-or-later\n */\n\nimport { contextBridge, ipcRenderer } from \"electron\";\n\ncontextBridge.exposeInMainWorld(\"GhostCordSplashNative\", {\n    onUpdateMessage(callback: (message: string) => void) {\n        ipcRenderer.on(\"update-splash-message\", (_, message: string) => callback(message));\n    }\n});\n"],
+  "mappings": "aAMA,IAAAA,EAA2C,oBAE3C,gBAAc,kBAAkB,wBAAyB,CACrD,gBAAgBC,EAAqC,CACjD,cAAY,GAAG,wBAAyB,CAACC,EAAGC,IAAoBF,EAASE,CAAO,CAAC,CACrF,CACJ,CAAC",
+  "names": ["import_electron", "callback", "_", "message"]
+}

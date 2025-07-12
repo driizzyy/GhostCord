@@ -1,0 +1,24 @@
+/*
+ * GhostCord, a desktop app aiming to give you a snappier Discord Experience
+ * Copyright (c) 2025 DriizzyyB and GhostCord contributors
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ */
+
+import { addPatch } from "./shared";
+
+addPatch({
+    patches: [
+        {
+            find: "lastOutputSystemDevice.justChanged",
+            replacement: {
+                // eslint-disable-next-line no-useless-escape
+                match: /(\i)\.\i\.getState\(\).neverShowModal/,
+                replace: "$& || $self.shouldIgnoreDevice($1)"
+            }
+        }
+    ],
+
+    shouldIgnoreDevice(state: any) {
+        return Object.keys(state?.default?.lastDeviceConnected ?? {})?.[0] === "vencord-screen-share";
+    }
+});
