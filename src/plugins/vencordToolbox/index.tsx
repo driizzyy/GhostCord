@@ -113,7 +113,7 @@ function VencordPopoutButton() {
                     ref={buttonRef}
                     className="vc-toolbox-btn"
                     onClick={() => setShow(v => !v)}
-                    tooltip={isShown ? null : "Vencord Toolbox"}
+                    tooltip={isShown ? null : "GhostCord Toolbox"}
                     icon={() => VencordPopoutIcon(isShown)}
                     selected={isShown}
                 />
@@ -134,8 +134,8 @@ function ToolboxFragmentWrapper({ children }: { children: ReactNode[]; }) {
 }
 
 export default definePlugin({
-    name: "VencordToolbox",
-    description: "Adds a button next to the inbox button in the channel header that houses Vencord quick actions",
+    name: "GhostCordToolbox",
+    description: "Adds a button next to the inbox button in the channel header that houses GhostCord quick actions",
     authors: [Devs.Ven, Devs.AutumnVN],
 
     patches: [

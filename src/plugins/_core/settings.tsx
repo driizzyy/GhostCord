@@ -90,25 +90,25 @@ export default definePlugin({
                 className: "vc-settings"
             },
             {
-                section: "VencordPlugins",
+                section: "GhostCordPlugins",
                 label: "Plugins",
                 element: PluginsTab,
                 className: "vc-plugins"
             },
             {
-                section: "VencordThemes",
+                section: "GhostCordThemes",
                 label: "Themes",
                 element: ThemesTab,
                 className: "vc-themes"
             },
             !IS_UPDATER_DISABLED && {
-                section: "VencordUpdater",
+                section: "GhostCordUpdater",
                 label: "Updater",
                 element: UpdaterTab,
                 className: "vc-updater"
             },
             {
-                section: "VencordCloud",
+                section: "GhostCordCloud",
                 label: "Cloud",
                 element: CloudTab,
                 className: "vc-cloud"
@@ -120,7 +120,7 @@ export default definePlugin({
                 className: "vc-backup-restore"
             },
             IS_DEV && {
-                section: "VencordPatchHelper",
+                section: "GhostCordPatchHelper",
                 label: "Patch Helper",
                 element: PatchHelperTab,
                 className: "vc-patch-helper"
